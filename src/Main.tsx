@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import { TabInfo, Tabs } from './components/Tabs'
+import { About } from './screens/about'
 
 export const Main = () => {
   const tabs = useMemo<TabInfo[]>(
@@ -18,7 +19,7 @@ export const Main = () => {
       {
         path: '/about',
         title: 'About This Site',
-        Screen: () => null,
+        Screen: About,
       },
       {
         path: '/contact',
