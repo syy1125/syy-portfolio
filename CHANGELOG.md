@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.5](https://github.com/syy1125/syy-portfolio/compare/v0.1.4...v0.1.5) (2020-07-02)
+
+
+### Bug Fixes
+
+* Disable import that's not ready yet ([6db80a2](https://github.com/syy1125/syy-portfolio/commit/6db80a29270c454839cd26a65eedfcab5e7915e9))
+
 ### [0.1.4](https://github.com/syy1125/syy-portfolio/compare/v0.1.3...v0.1.4) (2020-07-02)
 
 
