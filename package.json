@@ -21,6 +21,7 @@
     "react-markdown": "^4.3.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "standard-version": "^8.0.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -28,6 +29,7 @@
     "build": "react-scripts build",
     "lint": "eslint src --ext .ts,.tsx",
     "test": "react-scripts test",
+    "release": "standard-version",
     "eject": "react-scripts eject"
   },
   "browserslist": {
