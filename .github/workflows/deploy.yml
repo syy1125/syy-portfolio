@@ -41,4 +41,5 @@ jobs:
           cd build
           git config user.name ${GITHUB_ACTOR}
           git add .
-          git commit -m ${GITHUB_REF}
+          git commit -m ${GITHUB_REF#refs/tags/}
+          git push
