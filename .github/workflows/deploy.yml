@@ -39,4 +39,5 @@ jobs:
       - name: deploy
         run: |
           cd build
+          git config user.name ${GITHUB_ACTOR}
           git commit -m ${GITHUB_REF}
