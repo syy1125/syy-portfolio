@@ -35,6 +35,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: syy1125/syy1125.github.io
+          token: ${{ secrets.GH_PAGES_PAT }}
           path: build
       - name: export
         if: ${{ github.event_name == 'tag' }}
