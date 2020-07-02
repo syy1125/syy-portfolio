@@ -35,7 +35,7 @@ jobs:
           token: ${{ secrets.GH_PAGES_PAT }}
           path: build
       - name: export
-        run: cp -r ./source/build ./build
+        run: cp -r ./source/build/* ./build
       - name: deploy
         run: |
           cd build
