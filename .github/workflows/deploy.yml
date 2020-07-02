@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - v*
+    branches:
+      - master
 
 jobs:
   deploy:
@@ -29,13 +31,16 @@ jobs:
           npm run build
           cd ..
       - name: checkout-build
+        if: ${{ github.event_name == 'tag' }}
         uses: actions/checkout@v2
         with:
           repository: syy1125/syy1125.github.io
           path: build
       - name: export
+        if: ${{ github.event_name == 'tag' }}
         run: cp -r ./source/build ./build
       - name: deploy
+        if: ${{ github.event_name == 'tag' }}
         run: |
           cd build
           git commit -m ${GITHUB_REF}
