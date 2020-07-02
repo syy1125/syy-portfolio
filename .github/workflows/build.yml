@@ -2,8 +2,8 @@ name: deploy
 
 on:
   push:
-    tags:
-      - v*
+    branches:
+      - master
 
 jobs:
   deploy:
@@ -28,15 +28,3 @@ jobs:
           npm ci --dev
           npm run build
           cd ..
-      - name: checkout-build
-        uses: actions/checkout@v2
-        with:
-          repository: syy1125/syy1125.github.io
-          token: ${{ secrets.GH_PAGES_PAT }}
-          path: build
-      - name: export
-        run: cp -r ./source/build ./build
-      - name: deploy
-        run: |
-          cd build
-          git commit -m ${GITHUB_REF}
