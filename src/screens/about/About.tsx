@@ -2,10 +2,18 @@ import React, { useEffect, useState } from 'react'
 import Paper from '@material-ui/core/Paper'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Markdown from 'react-markdown'
+import { makeStyles } from '@material-ui/core/styles'
 
 const { PUBLIC_URL } = process.env
 
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    padding: theme.spacing(1),
+  },
+}))
+
 export const About = () => {
+  const classes = useStyles()
   const [document, setDocument] = useState<string | null>(null)
   useEffect(() => {
     fetch(`${PUBLIC_URL}/resources/about.md`)
@@ -14,7 +22,7 @@ export const About = () => {
   }, [setDocument])
 
   return (
-    <Paper>
+    <Paper className={classes.paper}>
       {document == null ? <CircularProgress /> : <Markdown source={document} />}
     </Paper>
   )
