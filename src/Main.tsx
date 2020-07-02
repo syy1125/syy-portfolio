@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
 import { TabInfo, Tabs } from './components/Tabs'
-import { About } from './screens/about'
 
 export const Main = () => {
   const tabs = useMemo<TabInfo[]>(
