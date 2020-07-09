@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import { TabInfo, Tabs } from './components/Tabs'
+import { GameDev } from './screens/gamedev'
 import { About } from './screens/about'
 
 export const Main = () => {
@@ -14,7 +15,7 @@ export const Main = () => {
       {
         path: '/game-dev',
         title: 'Game Dev',
-        Screen: () => null,
+        Screen: GameDev,
       },
       {
         path: '/about',
