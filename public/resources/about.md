@@ -28,7 +28,7 @@ Using React and programming the site myself allows me total control over what th
 
   React is the UI library that enables the creation of this site. It utilizes JSX syntax to declaratively render websites.
 
-  The initializatio is done by [create-react-app](https://github.com/facebook/create-react-app)
+  The initialization is done by [create-react-app](https://github.com/facebook/create-react-app)
 
   The React ecosystem is supported by a multitude of open-source libraries. Major libraries that this website uses are
 
