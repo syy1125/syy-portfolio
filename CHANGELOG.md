@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.13](https://github.com/syy1125/syy-portfolio/compare/v0.1.12...v0.1.13) (2020-07-09)
+
+
+### Features
+
+* Create game dev page ([7a4ece8](https://github.com/syy1125/syy-portfolio/commit/7a4ece822ed85ace463fd4d33d66bacdf02af49a))
+
 ### [0.1.12](https://github.com/syy1125/syy-portfolio/compare/v0.1.11...v0.1.12) (2020-07-02)
 
 ### [0.1.11](https://github.com/syy1125/syy-portfolio/compare/v0.1.10...v0.1.11) (2020-07-02)
