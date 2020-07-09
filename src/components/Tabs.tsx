@@ -30,7 +30,7 @@ export const Tabs = ({ tabs }: Props) => {
       <div className={classes.content}>
         <Switch>
           {tabs.map(({ title, Screen, ...props }) => (
-            <Route {...props}>
+            <Route key={props.path} {...props}>
               <Screen />
             </Route>
           ))}
