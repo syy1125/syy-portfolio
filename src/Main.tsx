@@ -5,8 +5,8 @@ import InfoIcon from '@material-ui/icons/Info'
 import ChatIcon from '@material-ui/icons/Chat'
 
 import { TabInfo, Tabs } from './components/Tabs'
-import { GameDev } from './screens/gamedev'
-import { About } from './screens/about'
+import { GameDev } from './containers/GameDev'
+import { About } from './containers/About'
 
 export const Main = () => {
   const tabs = useMemo<TabInfo[]>(
