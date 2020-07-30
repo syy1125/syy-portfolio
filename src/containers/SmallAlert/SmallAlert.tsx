@@ -21,7 +21,7 @@ export const SmallAlert = () => {
           I did my best to squish down content so that it works on smaller
           displays. However, this screen is simply too small. While all of the
           content will still be visible, they may look a bit weird as they get
-          squished out of their normal places.
+          pushed out of their normal places.
         </DialogContentText>
       </DialogContent>
       <DialogActions>

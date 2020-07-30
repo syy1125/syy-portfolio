@@ -7,6 +7,7 @@ import ChatIcon from '@material-ui/icons/Chat'
 import { TabInfo, Tabs } from './components/Tabs'
 import { GameDev } from './containers/GameDev'
 import { About } from './containers/About'
+import { SmallAlert } from './containers/SmallAlert'
 
 export const Main = () => {
   const tabs = useMemo<TabInfo[]>(
@@ -40,5 +41,10 @@ export const Main = () => {
     []
   )
 
-  return <Tabs tabs={tabs} />
+  return (
+    <React.Fragment>
+      <Tabs tabs={tabs} />
+      <SmallAlert />
+    </React.Fragment>
+  )
 }

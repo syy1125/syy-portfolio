@@ -47,7 +47,7 @@ export const FavouriteProjects = () => (
       title="LitestD"
       description="Quater-long VGDC project, Winter 2019"
       details={
-        <Text align="justify">
+        <Text align="justify" variant="body2">
           LitestD is a spin-off for the{' '}
           <a href="https://dsaname.itch.io/litd">Light in the Dark</a> project
           by another VGDC member, Riley, developed in parallel to LitD. I ended
@@ -56,15 +56,12 @@ export const FavouriteProjects = () => (
           <br />
           This game is my first time using Unity's Tilemap system. We were
           forced to learn some surprising technical details about Unity Tilemap
-          the hard way. For example, it's actually pretty hard to move entites
-          on the tilemap - the tilemap seem to be intended for static objects.
-          This caused us numerous problems as we tried to mvoe the enemies
-          around on the tilemap.
+          the hard way. For example, it's hard to move entites on the tilemap,
+          since it was designed for static entities. This caused us numerous
+          problems as we tried to mvoe the enemies around on the tilemap.
           <br />
-          As this is a strategy game, the UI work is heavy. I have applied many
-          principles I learned from working with ReactJS to ensure the
-          consistency of the user interface, and in the process refined my UI
-          workflow.
+          The UI work is heavy. I have applied many principles I learned from
+          working with ReactJS to ensure the consistency of the user interface.
         </Text>
       }
     />
