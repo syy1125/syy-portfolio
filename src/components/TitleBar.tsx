@@ -36,26 +36,25 @@ const useStyles = makeStyles((theme) => ({
       position: 'absolute',
       left: '50%',
       right: '50%',
+      height: 1,
       bottom: 0,
-      height: 3,
       background: 'white',
-      transition: 'left 0.3s, right 0.3s',
+      transition: 'left 0.3s, right 0.3s, height 0s 0.3s',
+    },
+    '&:hover': {
+      '&::after': {
+        left: 0,
+        right: 0,
+        height: 3,
+        transition: 'left 0.3s, right 0.3s',
+      },
     },
   },
   selectedTab: {
     '&::after': {
       left: 0,
       right: 0,
-      height: 1,
-    },
-  },
-  hoverTab: {
-    '&:hover': {
-      '&::after': {
-        left: 0,
-        right: 0,
-        height: 3,
-      },
+      transition: 'left 0.3s, right 0.3s',
     },
   },
   text: {
@@ -78,11 +77,9 @@ export const TitleBar = ({ tabs }: Props) => {
           <Route key={props.path} {...props}>
             {({ match }) => (
               <div
-                className={classnames(
-                  classes.tab,
-                  { [classes.selectedTab]: match != null },
-                  classes.hoverTab
-                )}
+                className={classnames(classes.tab, {
+                  [classes.selectedTab]: match != null,
+                })}
                 onClick={() => history.push(props.path)}
               >
                 <Hidden only="md">{icon}</Hidden>
