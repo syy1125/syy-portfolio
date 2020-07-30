@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     display: 'flex',
     flexDirection: (props: Props) => (props.reverse ? 'row-reverse' : 'row'),
-    height: 250,
+    height: 300,
     margin: theme.spacing(1),
   },
   image: {
@@ -49,7 +49,7 @@ export const Card = (props: Props) => {
         <TitleComponent href={link} variant="h4" className={classes.link}>
           {title}
         </TitleComponent>
-        <Text variant="subtitle1">{description}</Text>
+        <Text variant="h6">{description}</Text>
         {details}
       </div>
     </Paper>
