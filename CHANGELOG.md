@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.14](https://github.com/syy1125/syy-portfolio/compare/v0.1.13...v0.1.14) (2020-07-30)
+
+
+### Features
+
+* Add alert if screen is too small ([8b2a2c3](https://github.com/syy1125/syy-portfolio/commit/8b2a2c32ddec34d5643ecb39c1c11c19c2f3ff33))
+* Attach icons to tabs ([6029535](https://github.com/syy1125/syy-portfolio/commit/602953527e9143d946eca1897e2d1a375b9625bb))
+
 ### [0.1.13](https://github.com/syy1125/syy-portfolio/compare/v0.1.12...v0.1.13) (2020-07-09)
 
 
