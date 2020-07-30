@@ -7,6 +7,7 @@ export interface TabInfo {
   exact?: boolean
   path: string
   title: string
+  icon: React.ReactNode
   Screen: React.ComponentType
 }
 
@@ -30,7 +31,7 @@ export const Tabs = ({ tabs }: Props) => {
       <TitleBar tabs={tabs} />
       <div className={classes.content}>
         <Switch>
-          {tabs.map(({ title, Screen, ...props }) => (
+          {tabs.map(({ title, icon, Screen, ...props }) => (
             <Route key={props.path} {...props}>
               <Screen />
             </Route>

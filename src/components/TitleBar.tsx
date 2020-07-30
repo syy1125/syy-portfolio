@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, useHistory } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
+import Hidden from '@material-ui/core/Hidden'
 import Toolbar from '@material-ui/core/Toolbar'
 import Text from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
@@ -29,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
     cursor: 'pointer',
+    whiteSpace: 'nowrap',
     '&::after': {
       content: "''",
       position: 'absolute',
@@ -56,6 +58,9 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
+  text: {
+    marginLeft: theme.spacing(1),
+  },
 }))
 
 export const TitleBar = ({ tabs }: Props) => {
@@ -65,9 +70,11 @@ export const TitleBar = ({ tabs }: Props) => {
   return (
     <AppBar position="sticky">
       <Toolbar>
-        <Text variant="h6">Jack (Yunyang) Sun Portfolio v{version}</Text>
+        <Text variant="h6" noWrap>
+          Jack (Yunyang) Sun Portfolio v{version}
+        </Text>
         <div className={classes.filler} />
-        {tabs.map(({ title, Screen: _, ...props }) => (
+        {tabs.map(({ title, icon, Screen: _, ...props }) => (
           <Route key={props.path} {...props}>
             {({ match }) => (
               <div
@@ -78,7 +85,10 @@ export const TitleBar = ({ tabs }: Props) => {
                 )}
                 onClick={() => history.push(props.path)}
               >
-                <Text>{title}</Text>
+                <Hidden only="md">{icon}</Hidden>
+                <Hidden smDown>
+                  <Text className={classes.text}>{title}</Text>
+                </Hidden>
               </div>
             )}
           </Route>
