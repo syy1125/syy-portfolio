@@ -10,13 +10,13 @@ export const ResponsiveCenter = ({ children }: Props) => {
   return (
     <Grid container>
       <Hidden smDown>
-        <Grid item md={2} lg={3} />
+        <Grid item md={1} lg={2} xl={3} />
       </Hidden>
-      <Grid item xs={12} md={8} lg={6}>
+      <Grid item xs={12} md={10} lg={8} xl={6}>
         {children}
       </Grid>
       <Hidden smDown>
-        <Grid item md={2} lg={3} />
+        <Grid item md={1} lg={2} xl={3} />
       </Hidden>
     </Grid>
   )
