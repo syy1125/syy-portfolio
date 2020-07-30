@@ -7,16 +7,11 @@ import Text from '@material-ui/core/Typography'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import { Card } from './Card'
+import { ResponsiveCenter } from '../../components/ResponsiveCenter'
 
 type TabName = 'fav' | 'ongoing' | 'rest'
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    position: 'relative',
-    width: '60%',
-    left: '20%',
-    right: '20%',
-  },
   card: {
     width: '100%',
   },
@@ -57,7 +52,7 @@ export const GameDev = () => {
   )
 
   return (
-    <div className={classes.root}>
+    <ResponsiveCenter>
       <Accordion
         elevation={0}
         expanded={expanded === 'ongoing'}
@@ -252,6 +247,6 @@ export const GameDev = () => {
           />
         </Details>
       </Accordion>
-    </div>
+    </ResponsiveCenter>
   )
 }

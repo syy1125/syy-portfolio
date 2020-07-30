@@ -3,12 +3,14 @@ import Paper from '@material-ui/core/Paper'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Markdown from 'react-markdown'
 import { makeStyles } from '@material-ui/core/styles'
+import { ResponsiveCenter } from '../../components/ResponsiveCenter'
 
 const { PUBLIC_URL } = process.env
 
 const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(1),
+    margin: theme.spacing(1),
   },
 }))
 
@@ -22,8 +24,14 @@ export const About = () => {
   }, [setDocument])
 
   return (
-    <Paper className={classes.paper}>
-      {document == null ? <CircularProgress /> : <Markdown source={document} />}
-    </Paper>
+    <ResponsiveCenter>
+      <Paper className={classes.paper}>
+        {document == null ? (
+          <CircularProgress />
+        ) : (
+          <Markdown source={document} />
+        )}
+      </Paper>
+    </ResponsiveCenter>
   )
 }
