@@ -1,1 +1,1 @@
-export * from './GameDev'
+export { GameDev } from './GameDev'

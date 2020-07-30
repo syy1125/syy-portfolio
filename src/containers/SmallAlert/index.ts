@@ -1,0 +1,1 @@
+export { SmallAlert } from './SmallAlert'
