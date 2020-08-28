@@ -5,8 +5,9 @@ import InfoIcon from '@material-ui/icons/Info'
 import ChatIcon from '@material-ui/icons/Chat'
 
 import { TabInfo, Tabs } from './components/Tabs'
-import { GameDev } from './containers/GameDev'
+import { Home } from './containers/Home'
 import { About } from './containers/About'
+import { GameDev } from './containers/GameDev'
 import { SmallAlert } from './containers/SmallAlert'
 
 export const Main = () => {
@@ -17,7 +18,7 @@ export const Main = () => {
         path: '/',
         title: 'Home',
         icon: <HomeIcon />,
-        Screen: () => null,
+        Screen: Home,
       },
       {
         path: '/game-dev',
