@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ButtonBase from '@material-ui/core/ButtonBase'
 import Grid from '@material-ui/core/Grid'
 import Text from '@material-ui/core/Typography'
@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    border: '2px solid grey',
   },
   backdrop: {
     backgroundColor: theme.palette.common.black,
@@ -106,15 +107,17 @@ const useStyles = makeStyles((theme) => ({
 export const ProjectCard = (props: Props) => {
   const classes = useStyles()
   const history = useHistory()
+  const [imageFailed, setImageFailed] = useState(false)
 
   return (
     <Grid item xs={6} md={4} className={classes.root}>
-      {props.imageUrl ? (
+      {props.imageUrl != null && !imageFailed ? (
         <div className={classes.fill}>
           <img
             src={props.imageUrl}
             className={classes.background}
             alt="Game thumbnail"
+            onError={() => setImageFailed(true)}
           />
         </div>
       ) : (
