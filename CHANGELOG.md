@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.15](https://github.com/syy1125/syy-portfolio/compare/v0.1.14...v0.1.15) (2020-09-16)
+
+
+### Features
+
+* Initial draft of home screen ([fcdd119](https://github.com/syy1125/syy-portfolio/commit/fcdd119f4668b4fbc7c36784eb195e05a5f76038))
+
 ### [0.1.14](https://github.com/syy1125/syy-portfolio/compare/v0.1.13...v0.1.14) (2020-07-30)
 
 
