@@ -125,6 +125,10 @@ export const Home = () => {
               to be both fun and educational at the same time, and I aim to
               capture that in my games as well.
             </Text>
+            <Text className={classes.sectionBody}>
+              Again, head over to the <Link to="/game-dev">Game Dev</Link> page
+              to check out my projects!
+            </Text>
           </Paper>
         </Grid>
       </Grid>
