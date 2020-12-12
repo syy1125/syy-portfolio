@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.17](https://github.com/syy1125/syy-portfolio/compare/v0.1.16...v0.1.17) (2020-12-12)
+
+
+### Bug Fixes
+
+* Remove unused chat icon ([8808bad](https://github.com/syy1125/syy-portfolio/commit/8808bad066420f29a4e2290b9a5dcdd04b29a538))
+
 ### [0.1.16](https://github.com/syy1125/syy-portfolio/compare/v0.1.15...v0.1.16) (2020-12-12)
 
 ### [0.1.15](https://github.com/syy1125/syy-portfolio/compare/v0.1.14...v0.1.15) (2020-09-16)
