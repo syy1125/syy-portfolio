@@ -32,12 +32,6 @@ export const Main = () => {
         icon: <InfoIcon />,
         Screen: About,
       },
-      {
-        path: '/contact',
-        title: 'Contact / Resume',
-        icon: <ChatIcon />,
-        Screen: () => null,
-      },
     ],
     []
   )
