@@ -14,19 +14,17 @@ Using React and programming the site myself allows me total control over what th
 
   The source code for this website is available as a [public repository](https://github.com/syy1125/syy-portfolio) on my github.
 
-  This site is hosted on [GitHub Pages](https://pages.github.com/).
-
-  The deployment process is automated with [GitHub Actions](https://github.com/features/actions).
+  This site is hosted on GitHub Pages, and deployment is automated with GitHub Actions.
 
   Whenever I push a new tag to the source repository, GitHub Actions automatically transpiles the source code and deploys it to the GitHub Pages repository.
 
 - [typescript](https://www.typescriptlang.org/)
 
-  Typescript enables static typing in javascript. It helps me catch some common mistakes, and also allows brings out powerful capabilities in the IDE that require static typing to work properly.
+  Typescript enables static typing in javascript. It helps me catch some common mistakes, and also allows brings out powerful capabilities in the IDE that utilize static typing.
 
 - [react](https://reactjs.org/)
 
-  React is the UI library that enables the creation of this site. It utilizes JSX syntax to declaratively render websites.
+  React is the UI library that enables the creation of this site. It uses JSX syntax to declaratively render websites.
 
   The initialization is done by [create-react-app](https://github.com/facebook/create-react-app)
 
