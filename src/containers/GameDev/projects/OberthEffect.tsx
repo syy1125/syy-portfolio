@@ -40,23 +40,24 @@ export const OberthEffect = () => {
       <Text>Content and Modding</Text>
       <Text variant="body2" align="justify">
         I've always been a fan of modding. I believe that community-made content
-        can add a lot of value to a game, and I've seen the effect of modding
-        extend the experience of many games - in Minecraft, KSP, and Stellaris,
-        to list a few. So when I was developing the game, I made sure that
-        modding has a place in Oberth Effect.
+        can add a lot of value to a game, and I've seen modding extend the
+        experience of many games - games like Minecraft, KSP, and Stellaris, to
+        list a few. So when I was developing the game, I made sure that modding
+        has a place in Oberth Effect.
         <br />
         The game content is centered around using YAML documents to define and
         describe blocks. The fields that make up a block definition roughly
         correspond to the components of a block. The mod loader system allows
         adding additional content, or changing existing ones, to add or modify
-        blocks in the game. This allows whant I call content modding, where
-        other content creators can create mods that use the existing components
-        in the game to make their own unique interactions.
+        blocks in the game. This allows whant I call data modding, where content
+        creators can use the existing components in the game to make their own
+        unique dynamics.
         <br />
         There are plans to also allow what I call code modding, where modders
         can write their own code, define their own components, so that they have
         deeper access to augment or modify the game code, instead of having to
-        rely on existing code architecture. However, this would require a major
+        rely on existing code architecture. This would let mods change the game
+        on the mechanics level. However, code modding would require a major
         refactor of the existing game code, and it is rather ambitious. To avoid
         scope creep, code modding is currently listed as a low-priority feature.
       </Text>
