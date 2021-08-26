@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     margin: theme.spacing(1),
-    overflow: 'auto'
+    overflow: 'auto',
   },
 }))
 

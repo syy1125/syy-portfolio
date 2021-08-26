@@ -4,7 +4,7 @@ import Text from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 
 import { ResponsiveCenter } from '../../components/ResponsiveCenter'
-import { R3 } from './projects/R3'
+import { OberthEffect } from './projects/OberthEffect'
 import { Spinball } from './projects/Spinball'
 import { Streamline } from './projects/Streamline'
 import { LitestD } from './projects/LitestD'
@@ -39,7 +39,7 @@ export const GameDev = () => {
             These are the game project(s) I'm currently actively working on.
           </Text>
         </Grid>
-        <R3 />
+        <OberthEffect />
         <Grid item xs />
         <Grid item xs={12} className={classes.sectionTitle}>
           <Text variant="h4">Favourite Projects</Text>
