@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.18](https://github.com/syy1125/syy-portfolio/compare/v0.1.17...v0.1.18) (2021-08-26)
+
+
+### Bug Fixes
+
+* Fix type in Artifical Gravity page ([39bd47d](https://github.com/syy1125/syy-portfolio/commit/39bd47da4f80c5eaa26395a891197b4bb6834f7c))
+
 ### [0.1.17](https://github.com/syy1125/syy-portfolio/compare/v0.1.16...v0.1.17) (2020-12-12)
 
 
