@@ -43,7 +43,7 @@ export const ArtificialGravity = () => {
         technology, I was able to make transition from level 1 to level 2
         seamless.
         <br />
-        Ultimately, I believe having an arbitrary directio nfo gravity, in
+        Ultimately, I believe having an arbitrary direction of gravity, in
         addition to having the game be 3D, increased the design complexity too
         much. The game content was very limited and remains largely as a proof
         of concept.
