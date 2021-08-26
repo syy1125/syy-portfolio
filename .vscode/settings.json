@@ -1,3 +1,6 @@
 {
-    "editor.tabSize": 2
+    "editor.tabSize": 2,
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow": "/.github/workflows/**/*.yml"
+    }
 }
