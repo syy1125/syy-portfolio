@@ -15,7 +15,6 @@
     "@types/react-dom": "^16.9.0",
     "@types/react-router-dom": "^5.1.5",
     "classnames": "^2.2.6",
-    "prettier": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-markdown": "^4.3.1",
@@ -27,6 +26,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "prettier": "prettierx --config .prettierrc.json --write src",
     "lint": "eslint src --ext .ts,.tsx",
     "test": "react-scripts test",
     "release": "standard-version",
@@ -43,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "prettierx": "^0.19.0"
   }
 }
