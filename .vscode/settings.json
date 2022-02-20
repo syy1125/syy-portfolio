@@ -2,5 +2,9 @@
     "editor.tabSize": 2,
     "yaml.schemas": {
         "https://json.schemastore.org/github-workflow": "/.github/workflows/**/*.yml"
-    }
+    },
+    "prettier.documentSelectors": [
+        "src/**/*.tsx?"
+    ],
+    "prettier.prettierPath": "./node_modules/prettierx"
 }

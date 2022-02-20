@@ -8,7 +8,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import classnames from 'classnames'
 
 import { TabInfo } from './Tabs'
-import { version } from '../../package.json'
+import pkg from '../../package.json'
 
 interface Props {
   tabs: TabInfo[]
@@ -70,7 +70,7 @@ export const TitleBar = ({ tabs }: Props) => {
     <AppBar position="sticky">
       <Toolbar>
         <Text variant="h6" noWrap>
-          Jack (Yunyang) Sun Portfolio v{version}
+          Jack (Yunyang) Sun Portfolio v{pkg.version}
         </Text>
         <div className={classes.filler} />
         {tabs.map(({ title, icon, Screen: _, ...props }) => (

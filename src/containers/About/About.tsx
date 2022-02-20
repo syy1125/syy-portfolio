@@ -29,7 +29,7 @@ export const About = () => {
         {document == null ? (
           <CircularProgress />
         ) : (
-          <Markdown source={document} />
+          <Markdown children={document} />
         )}
       </Paper>
     </ResponsiveCenter>
