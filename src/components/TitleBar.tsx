@@ -1,10 +1,10 @@
 import React from 'react'
 import { Route, useHistory } from 'react-router-dom'
-import AppBar from '@material-ui/core/AppBar'
-import Hidden from '@material-ui/core/Hidden'
-import Toolbar from '@material-ui/core/Toolbar'
-import Text from '@material-ui/core/Typography'
-import { makeStyles } from '@material-ui/core/styles'
+import AppBar from '@mui/material/AppBar'
+import Hidden from '@mui/material/Hidden'
+import Toolbar from '@mui/material/Toolbar'
+import Text from '@mui/material/Typography'
+import makeStyles from '@mui/styles/makeStyles'
 import classnames from 'classnames'
 
 import { TabInfo } from './Tabs'
@@ -83,7 +83,7 @@ export const TitleBar = ({ tabs }: Props) => {
                 onClick={() => history.push(props.path)}
               >
                 <Hidden only="md">{icon}</Hidden>
-                <Hidden smDown>
+                <Hidden mdDown>
                   <Text className={classes.text}>{title}</Text>
                 </Hidden>
               </div>

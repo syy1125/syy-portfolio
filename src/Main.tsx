@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
-import HomeIcon from '@material-ui/icons/Home'
-import VideogameAssetIcon from '@material-ui/icons/VideogameAsset'
-import InfoIcon from '@material-ui/icons/Info'
+import HomeIcon from '@mui/icons-material/Home'
+import VideogameAssetIcon from '@mui/icons-material/VideogameAsset'
+import InfoIcon from '@mui/icons-material/Info'
 
 import { TabInfo, Tabs } from './components/Tabs'
 import { Home } from './containers/Home'

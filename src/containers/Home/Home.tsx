@@ -1,9 +1,10 @@
 import React from 'react'
-import Grid from '@material-ui/core/Grid'
-import Paper from '@material-ui/core/Paper'
-import Text from '@material-ui/core/Typography'
-import { makeStyles, Theme } from '@material-ui/core/styles'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
+import Grid from '@mui/material/Grid'
+import Paper from '@mui/material/Paper'
+import Text from '@mui/material/Typography'
+import { Theme } from '@mui/material/styles'
+import makeStyles from '@mui/styles/makeStyles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import { Link } from 'react-router-dom'
 
 import profile from '../../assets/profile_image.jpg'
@@ -43,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.grey[500],
   },
   sectionBody: {
-    padding: `${theme.spacing(1)}px ${theme.spacing(5)}px`,
+    padding: `${theme.spacing(1)} ${theme.spacing(5)}`,
   },
 }))
 

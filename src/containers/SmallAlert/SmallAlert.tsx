@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
-import Button from '@material-ui/core/Button'
-import Dialog from '@material-ui/core/Dialog'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
-import DialogActions from '@material-ui/core/DialogActions'
+import Button from '@mui/material/Button'
+import Dialog from '@mui/material/Dialog'
+import DialogTitle from '@mui/material/DialogTitle'
+import DialogContent from '@mui/material/DialogContent'
+import DialogContentText from '@mui/material/DialogContentText'
+import DialogActions from '@mui/material/DialogActions'
 
-import useMediaQuery from '@material-ui/core/useMediaQuery'
-import { Theme } from '@material-ui/core/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import { Theme } from '@mui/material/styles'
 
 export const SmallAlert = () => {
-  const xs = useMediaQuery((theme: Theme) => theme.breakpoints.down('xs'))
+  const xs = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
   const [dismissed, setDismissed] = useState(false)
 
   return (

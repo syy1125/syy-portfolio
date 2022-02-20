@@ -1,5 +1,5 @@
 import React from 'react'
-import Text from '@material-ui/core/Typography'
+import Text from '@mui/material/Typography'
 
 import { ProjectDisplay } from '../ProjectDisplay/ProjectDisplay'
 

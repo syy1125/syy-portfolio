@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import ButtonBase from '@material-ui/core/ButtonBase'
-import Grid from '@material-ui/core/Grid'
-import Text from '@material-ui/core/Typography'
-import { makeStyles, fade } from '@material-ui/core/styles'
+import ButtonBase from '@mui/material/ButtonBase'
+import Grid from '@mui/material/Grid'
+import Text from '@mui/material/Typography'
+import { alpha } from '@mui/material/styles'
+
+import makeStyles from '@mui/styles/makeStyles'
 
 import { useHistory } from 'react-router-dom'
 import classnames from 'classnames'
@@ -77,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
   descriptionContainer: {
     flexBasis: 0,
     flexGrow: 1,
-    padding: `0px ${theme.spacing(1)}px`,
+    padding: `0px ${theme.spacing(1)}`,
     display: 'flex',
     justifyContent: 'center',
   },
@@ -92,12 +94,12 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
   },
   button: {
-    margin: `0px ${theme.spacing(0.5)}px`,
+    margin: `0px ${theme.spacing(0.5)}`,
     padding: theme.spacing(1),
-    border: `solid 2px ${fade(theme.palette.common.white, 0)}`,
+    border: `solid 2px ${alpha(theme.palette.common.white, 0)}`,
     transition: theme.transitions.create('border-color'),
     '&:hover': {
-      borderColor: fade(theme.palette.common.white, 0.8),
+      borderColor: alpha(theme.palette.common.white, 0.8),
     },
     fontFamily: theme.typography.fontFamily,
     fontSize: 14,
