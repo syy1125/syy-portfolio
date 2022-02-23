@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-  ThemeProvider,
-  StyledEngineProvider,
-} from '@mui/material/styles'
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles'
 import { BrowserRouter } from 'react-router-dom'
 import './App.css'
 import { theme } from './theme'
