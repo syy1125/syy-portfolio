@@ -14,7 +14,9 @@ jobs:
         with:
           path: source
       - name: node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
       - name: cache
         uses: actions/cache@v2
         with:
@@ -25,6 +27,6 @@ jobs:
       - name: build
         run: |
           cd source
-          npm ci --dev
+          npm ci
           npm run build
           cd ..
