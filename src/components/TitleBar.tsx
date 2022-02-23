@@ -4,8 +4,7 @@ import AppBar from '@mui/material/AppBar'
 import Hidden from '@mui/material/Hidden'
 import Toolbar from '@mui/material/Toolbar'
 import Text from '@mui/material/Typography'
-import makeStyles from '@mui/styles/makeStyles'
-import classnames from 'classnames'
+import { styled } from '@mui/material/styles'
 
 import { TabInfo } from './Tabs'
 import pkg from '../../package.json'
@@ -14,56 +13,56 @@ interface Props {
   tabs: TabInfo[]
 }
 
-const useStyles = makeStyles((theme) => ({
-  toolBar: {
-    flexDirection: 'row',
+const Filler = styled('div', { name: 'Filler' })({
+  flexGrow: 1,
+})
+
+interface TabProps extends React.HTMLAttributes<HTMLDivElement> {
+  selected: boolean
+}
+
+const Tab = styled('div', {
+  name: 'Tab',
+  shouldForwardProp: (prop) => prop !== 'selected',
+})<TabProps>(({ selected, theme }) => ({
+  position: 'relative',
+  alignSelf: 'stretch',
+  display: 'flex',
+  flexDirection: 'row',
+  alignItems: 'center',
+  marginLeft: theme.spacing(1),
+  marginRight: theme.spacing(1),
+  cursor: 'pointer',
+  whiteSpace: 'nowrap',
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    left: selected ? '0px' : '50%',
+    right: selected ? '0px' : '50%',
+    height: '1px',
+    bottom: '0px',
+    background: 'white',
+    transition: selected
+      ? 'left 0.2s, right 0.2s, height 0.2s'
+      : 'left 0.2s, right 0.2s, height 0s 0.2s',
   },
-  filler: {
-    flexGrow: 1,
-  },
-  tab: {
-    position: 'relative',
-    alignSelf: 'stretch',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    cursor: 'pointer',
-    whiteSpace: 'nowrap',
+  '&:hover': {
     '&::after': {
-      content: "''",
-      position: 'absolute',
-      left: '50%',
-      right: '50%',
-      height: 1,
-      bottom: 0,
-      background: 'white',
-      transition: 'left 0.3s, right 0.3s, height 0s 0.3s',
+      left: '0px',
+      right: '0px',
+      height: '3px',
+      transition: selected
+        ? 'left 0.2s, right 0.2s, height 0.2s'
+        : 'left 0.2s, right 0.2s',
     },
-    '&:hover': {
-      '&::after': {
-        left: 0,
-        right: 0,
-        height: 3,
-        transition: 'left 0.3s, right 0.3s',
-      },
-    },
-  },
-  selectedTab: {
-    '&::after': {
-      left: 0,
-      right: 0,
-      transition: 'left 0.3s, right 0.3s',
-    },
-  },
-  text: {
-    marginLeft: theme.spacing(1),
   },
 }))
 
+const TabText = styled(Text, { name: 'TitleText' })(({ theme }) => ({
+  marginLeft: theme.spacing(1),
+}))
+
 export const TitleBar = ({ tabs }: Props) => {
-  const classes = useStyles()
   const history = useHistory()
 
   return (
@@ -72,21 +71,19 @@ export const TitleBar = ({ tabs }: Props) => {
         <Text variant="h6" noWrap>
           Jack (Yunyang) Sun Portfolio v{pkg.version}
         </Text>
-        <div className={classes.filler} />
+        <Filler />
         {tabs.map(({ title, icon, Screen: _, ...props }) => (
           <Route key={props.path} {...props}>
             {({ match }) => (
-              <div
-                className={classnames(classes.tab, {
-                  [classes.selectedTab]: match != null,
-                })}
+              <Tab
+                selected={match != null}
                 onClick={() => history.push(props.path)}
               >
                 <Hidden only="md">{icon}</Hidden>
                 <Hidden mdDown>
-                  <Text className={classes.text}>{title}</Text>
+                  <TabText>{title}</TabText>
                 </Hidden>
-              </div>
+              </Tab>
             )}
           </Route>
         ))}

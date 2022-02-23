@@ -1,6 +1,6 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
-import makeStyles from '@mui/styles/makeStyles'
+import { styled } from '@mui/material/styles'
 import { TitleBar } from './TitleBar'
 
 export interface TabInfo {
@@ -15,21 +15,17 @@ interface Props {
   tabs: TabInfo[]
 }
 
-const useStyles = makeStyles((theme) => ({
-  content: {
-    flexGrow: 1,
-    margin: theme.spacing(1),
-    overflow: 'auto',
-  },
+const Content = styled('div', { name: 'Content' })(({ theme }) => ({
+  flexGrow: 1,
+  margin: theme.spacing(1),
+  overflow: 'auto',
 }))
 
 export const Tabs = ({ tabs }: Props) => {
-  const classes = useStyles()
-
   return (
     <React.Fragment>
       <TitleBar tabs={tabs} />
-      <div className={classes.content}>
+      <Content>
         <Switch>
           {tabs.map(({ title, icon, Screen, ...props }) => (
             <Route key={props.path} {...props}>
@@ -37,7 +33,7 @@ export const Tabs = ({ tabs }: Props) => {
             </Route>
           ))}
         </Switch>
-      </div>
+      </Content>
     </React.Fragment>
   )
 }

@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import ButtonBase from '@mui/material/ButtonBase'
 import Grid from '@mui/material/Grid'
+import { alpha, styled } from '@mui/material/styles'
 import Text from '@mui/material/Typography'
-import { alpha } from '@mui/material/styles'
-
-import makeStyles from '@mui/styles/makeStyles'
 
 import { useHistory } from 'react-router-dom'
-import classnames from 'classnames'
 
 interface Props {
   title: React.ReactNode
@@ -17,147 +14,146 @@ interface Props {
   links?: Array<{ title: string; href: string }>
 }
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    position: 'relative',
-    '&::before': {
-      content: '""',
-      paddingTop: '80%',
-      display: 'block',
-    },
+const GridCard = styled(Grid, { name: 'GridCard' })({
+  position: 'relative',
+  '&::before': {
+    content: '""',
+    paddingTop: '80%',
+    display: 'block',
   },
-  fill: {
-    position: 'absolute',
-    left: 4,
-    right: 4,
-    top: 4,
-    bottom: 4,
-  },
-  background: {
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-  },
-  fallbackBackground: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    border: '2px solid grey',
-  },
-  backdrop: {
-    backgroundColor: theme.palette.common.black,
-    opacity: 0,
-    transition: theme.transitions.create('opacity'),
-    '$root:hover &': {
-      opacity: 0.75,
-    },
-  },
-  foreground: {
-    opacity: 0,
-    transition: theme.transitions.create('opacity'),
-    '$root:hover &': {
-      opacity: 1,
-    },
+})
 
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'stretch',
-    padding: theme.spacing(2),
-    color: theme.palette.common.white,
+const Panel = styled('div', { name: 'Panel' })({
+  position: 'absolute',
+  left: 4,
+  right: 4,
+  top: 4,
+  bottom: 4,
+})
+
+const ImageBackground = styled('img', { name: 'ImageBackground' })({
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+})
+
+const TextPanel = styled(Panel, { name: 'TextBackground' })({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  border: '2px solid grey',
+})
+
+const Backdrop = styled(Panel, { name: 'Backdrop' })(({ theme }) => ({
+  backgroundColor: theme.palette.common.black,
+  opacity: 0,
+  transition: theme.transitions.create('opacity'),
+  [`${GridCard}:hover &`]: {
+    opacity: 0.75,
   },
-  titleContainer: {
-    flexBasis: 0,
-    flexGrow: 1,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
+}))
+
+const Foreground = styled(Panel, { name: 'Foreground' })(({ theme }) => ({
+  opacity: 0,
+  transition: theme.transitions.create('opacity'),
+  [`${GridCard}:hover &`]: {
+    opacity: 1,
   },
-  title: {
-    fontWeight: 'bold',
-    userSelect: 'none',
-  },
-  descriptionContainer: {
+
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'stretch',
+  padding: theme.spacing(2),
+  color: theme.palette.common.white,
+}))
+
+const TitleContainer = styled('div', { name: 'TitleContainer' })({
+  flexBasis: 0,
+  flexGrow: 1,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+})
+
+const Title = styled(Text, { name: 'Title' })({
+  fontWeight: 'bold',
+  userSelect: 'none',
+})
+
+const DescriptionContainer = styled('div', { name: 'DescriptionContainer' })(
+  ({ theme }) => ({
     flexBasis: 0,
     flexGrow: 1,
     padding: `0px ${theme.spacing(1)}`,
     display: 'flex',
     justifyContent: 'center',
+  })
+)
+
+const Description = styled(Text, { name: 'Description' })({
+  userSelect: 'none',
+})
+
+const ButtonsBar = styled('div', { name: 'ButtonsBar' })({
+  flexBasis: 0,
+  flexGrow: 1,
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+})
+
+const Button = styled(ButtonBase, { name: 'Button' })(({ theme }) => ({
+  margin: `0px ${theme.spacing(0.5)}`,
+  padding: theme.spacing(1),
+  border: `solid 2px ${alpha(theme.palette.common.white, 0)}`,
+  transition: theme.transitions.create('border-color'),
+  '&:hover': {
+    borderColor: alpha(theme.palette.common.white, 0.8),
   },
-  description: {
-    userSelect: 'none',
-  },
-  buttonsBar: {
-    flexBasis: 0,
-    flexGrow: 1,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  button: {
-    margin: `0px ${theme.spacing(0.5)}`,
-    padding: theme.spacing(1),
-    border: `solid 2px ${alpha(theme.palette.common.white, 0)}`,
-    transition: theme.transitions.create('border-color'),
-    '&:hover': {
-      borderColor: alpha(theme.palette.common.white, 0.8),
-    },
-    fontFamily: theme.typography.fontFamily,
-    fontSize: 14,
-  },
-}))
+  fontFamily: theme.typography.fontFamily,
+  fontSize: 14,
+})) as typeof ButtonBase
 
 export const ProjectCard = (props: Props) => {
-  const classes = useStyles()
   const history = useHistory()
   const [imageFailed, setImageFailed] = useState(false)
 
   return (
-    <Grid item xs={6} md={4} className={classes.root}>
+    <GridCard item xs={6} md={4}>
       {props.imageUrl != null && !imageFailed ? (
-        <div className={classes.fill}>
-          <img
+        <Panel>
+          <ImageBackground
             src={props.imageUrl}
-            className={classes.background}
             alt="Game thumbnail"
             onError={() => setImageFailed(true)}
           />
-        </div>
+        </Panel>
       ) : (
-        <div className={classnames(classes.fill, classes.fallbackBackground)}>
+        <TextPanel>
           <Text variant="h4">{props.title}</Text>
-        </div>
+        </TextPanel>
       )}
-      <div className={classnames(classes.fill, classes.backdrop)} />
-      <div className={classnames(classes.fill, classes.foreground)}>
-        <div className={classes.titleContainer}>
-          <Text variant="h5" className={classes.title}>
-            {props.title}
-          </Text>
-        </div>
-        <div className={classes.descriptionContainer}>
-          <Text className={classes.description}>{props.tagline}</Text>
-        </div>
-        <div className={classes.buttonsBar}>
+      <Backdrop />
+      <Foreground>
+        <TitleContainer>
+          <Title variant="h5">{props.title}</Title>
+        </TitleContainer>
+        <DescriptionContainer>
+          <Description>{props.tagline}</Description>
+        </DescriptionContainer>
+        <ButtonsBar>
           {props.detailsPath ? (
-            <ButtonBase
-              className={classes.button}
-              onClick={() => history.push(props.detailsPath!)}
-            >
+            <Button onClick={() => history.push(props.detailsPath)}>
               Details
-            </ButtonBase>
+            </Button>
           ) : null}
           {props.links?.map(({ title, href }) => (
-            <ButtonBase
-              key={href}
-              component="a"
-              className={classes.button}
-              href={href}
-            >
+            <Button key={href} component="a" href={href}>
               {title}
-            </ButtonBase>
+            </Button>
           ))}
-        </div>
-      </div>
-    </Grid>
+        </ButtonsBar>
+      </Foreground>
+    </GridCard>
   )
 }

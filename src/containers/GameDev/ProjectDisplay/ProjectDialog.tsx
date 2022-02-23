@@ -6,8 +6,8 @@ import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
 import Slide from '@mui/material/Slide'
+import { styled } from '@mui/material/styles'
 import { TransitionProps } from '@mui/material/transitions'
-import makeStyles from '@mui/styles/makeStyles'
 
 interface Props {
   open: boolean
@@ -18,23 +18,23 @@ interface Props {
   children: React.ReactNode | React.ReactNode[]
 }
 
-const useStyles = makeStyles((theme) => ({
-  content: {
-    color: theme.palette.text.secondary,
-  },
-  inspirationList: {
-    margin: 0,
-  },
-  spacer: {
-    flexGrow: 1,
-  },
-}))
-
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & { children: React.ReactElement<any, any> },
   ref: React.Ref<unknown>
 ) {
   return <Slide direction="up" ref={ref} {...props} />
+})
+
+const Content = styled(DialogContent, { name: 'Content' })(({ theme }) => ({
+  color: theme.palette.text.secondary,
+}))
+
+const InspirationList = styled('ul', { name: 'InspirationList' })({
+  margin: 0,
+})
+
+const Spacer = styled('div', { name: 'Spacer' })({
+  flexGrow: 1,
 })
 
 export const ProjectDialog = ({
@@ -45,8 +45,6 @@ export const ProjectDialog = ({
   inspirations,
   children,
 }: Props) => {
-  const classes = useStyles()
-
   return (
     <Dialog
       maxWidth="lg"
@@ -56,29 +54,29 @@ export const ProjectDialog = ({
       onClose={onClose}
     >
       <DialogTitle>{title}</DialogTitle>
-      <DialogContent className={classes.content}>
+      <Content>
         <DialogContentText>{subtitle}</DialogContentText>
         {inspirations ? (
           <DialogContentText variant="subtitle2">
             Inspirations:{' '}
             {inspirations.length > 2 ? (
-              <ul className={classes.inspirationList}>
+              <InspirationList>
                 {inspirations.map((item) => (
                   <li>{item}</li>
                 ))}
-              </ul>
+              </InspirationList>
             ) : (
               inspirations.join(', ')
             )}
           </DialogContentText>
         ) : null}
         {children}
-      </DialogContent>
+      </Content>
       <DialogActions>
         <Button color="primary" onClick={onClose}>
           Close
         </Button>
-        <div className={classes.spacer} />
+        <Spacer />
       </DialogActions>
     </Dialog>
   )

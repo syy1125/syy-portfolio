@@ -7,7 +7,7 @@ export const ProjectStardust = () => {
     <ProjectDisplay
       title="Project Stardust"
       detailsSubpath="project-stardust"
-      tagline="Orbital mechanics meets grand strategy"
+      tagline="Incorporating orbital mechanics in grand strategy"
       links={[
         {
           title: 'itch.io',

@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from '@mui/material/Grid'
 import Text from '@mui/material/Typography'
-import makeStyles from '@mui/styles/makeStyles'
+import { styled } from '@mui/material/styles'
 
 import { ResponsiveCenter } from '../../components/ResponsiveCenter'
 import { OberthEffect } from './projects/OberthEffect'
@@ -11,29 +11,21 @@ import { LitestD } from './projects/LitestD'
 import { ArtificialGravity } from './projects/ArtificialGravity'
 import { ProjectStardust } from './projects/ProjectStardust'
 
-const useStyles = makeStyles((theme) => ({
-  sectionTitle: {
-    borderBottomWidth: 2,
-    borderBottomStyle: 'solid',
-    borderBottomColor: theme.palette.divider,
-    '&:first-child': {
-      marginTop: theme.spacing(2),
-    },
-    '&:not(:first-child)': {
-      marginTop: theme.spacing(5),
-    },
+const SectionTitle = styled(Grid, { name: 'SectionTitle' })(({ theme }) => ({
+  borderBottom: `solid 2px ${theme.palette.divider}`,
+  marginTop: theme.spacing(3),
+  '&:first-child': {
+    marginTop: theme.spacing(2),
   },
 }))
 
 export const GameDev = () => {
-  const classes = useStyles()
-
   return (
     <ResponsiveCenter>
       <Grid container>
-        <Grid item xs={12} className={classes.sectionTitle}>
+        <SectionTitle item xs={12}>
           <Text variant="h4">Ongoing Project(s)</Text>
-        </Grid>
+        </SectionTitle>
         <Grid item xs={12}>
           <Text>
             These are the game project(s) I'm currently actively working on.
@@ -41,9 +33,9 @@ export const GameDev = () => {
         </Grid>
         <OberthEffect />
         <Grid item xs />
-        <Grid item xs={12} className={classes.sectionTitle}>
+        <SectionTitle item xs={12}>
           <Text variant="h4">Favourite Projects</Text>
-        </Grid>
+        </SectionTitle>
         <Grid item xs={12}>
           <Text>
             These are my favourite projects, both in terms of player experience
@@ -55,9 +47,9 @@ export const GameDev = () => {
         <Streamline />
         <LitestD />
         <Grid item xs />
-        <Grid item xs={12} className={classes.sectionTitle}>
+        <SectionTitle item xs={12}>
           <Text variant="h4">Other Past Projects</Text>
-        </Grid>
+        </SectionTitle>
         <Grid item xs={12}>
           <Text>
             I enjoy experimenting in my game projects. While some of those are
