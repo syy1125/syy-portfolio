@@ -96,8 +96,8 @@ export const Home = () => {
           <Paper>
             <TitleText variant="h4">About Me</TitleText>
             <SectionBody>
-              Hello! I'm Jack. I'm currently a 4th year UCI student looking for
-              internship opportunities in the games industry.
+              Hello! I'm Jack. I'm currently a 5th year UCI student looking to
+              enter the games industry.
             </SectionBody>
             <SectionBody>
               As a member of the Video Game Development Club at UCI, I have
@@ -113,9 +113,9 @@ export const Home = () => {
             </SectionBody>
             <SectionBody>
               As an astrophysicist, I enjoy employing realistic physics in my
-              games. I admire Kerbal Space Program because of this - KSP manages
-              to be both fun and educational at the same time, and I aim to
-              capture that in my games as well.
+              games. My aim is for my games to be more than just entertainment.
+              I want my games to be capable of teaching the player something
+              about how the world works.
             </SectionBody>
             <SectionBody>
               Again, head over to the <Link to="/game-dev">Game Dev</Link> page

@@ -8,8 +8,12 @@ export const OberthEffect = () => {
     <ProjectDisplay
       title="Oberth Effect"
       detailsSubpath="oberthEffect"
-      tagline="Moddable vehicle builder and combat"
-      subtitle="Personal project"
+      imageUrl="https://img.itch.zone/aW1hZ2UvMTIzODUzMi83NzU1NTcxLnBuZw==/original/EcepOn.png"
+      tagline="Moddable vehicle builder"
+      links={[
+        { title: 'itch.io', href: 'https://syy1125.itch.io/oberth-effect' },
+      ]}
+      subtitle="Capstone project"
       inspirations={[
         'Reassembly (video game)',
         'From The Depths (video game)',
@@ -24,17 +28,16 @@ export const OberthEffect = () => {
       <br />
       <Text>Concept and Design</Text>
       <Text variant="body2" align="justify">
-        The idea originally came when I was playing Reassembly. Reassembly was
-        one of my favourite games, but it lacked support for real-time
-        multiplayer.
+        The idea originally came when I was playing Reassembly. Reassembly is a
+        great game, but it lacked support for real-time multiplayer.
         <br />
         As such, when I took course ICS 168 (Multiplayer Game Design) at UCI, I
         came up with Oberth Effect as my project for that course. The idea was
         to take a simplfied version of Reassembly's vehicle building system, and
         create a multiplayer-compatible game arount it. At the end of the
         course, I was very satisfied with the progress I made on the game and
-        decided to continue development over summer break. Most likely I will
-        continue working on it in ICS 169A/B (Capstone Game Project).
+        decided to continue development over summer breakand into ICS 169A/B
+        (Capstone Game Project).
       </Text>
       <br />
       <Text>Content and Modding</Text>
@@ -49,17 +52,18 @@ export const OberthEffect = () => {
         describe blocks. The fields that make up a block definition roughly
         correspond to the components of a block. The mod loader system allows
         adding additional content, or changing existing ones, to add or modify
-        blocks in the game. This allows whant I call data modding, where content
+        blocks in the game. This allows what I call data modding, where content
         creators can use the existing components in the game to make their own
         unique dynamics.
         <br />
-        There are plans to also allow what I call code modding, where modders
+        There are plans to also allow modding on the code level, where modders
         can write their own code, define their own components, so that they have
         deeper access to augment or modify the game code, instead of having to
         rely on existing code architecture. This would let mods change the game
-        on the mechanics level. However, code modding would require a major
-        refactor of the existing game code, and it is rather ambitious. To avoid
-        scope creep, code modding is currently listed as a low-priority feature.
+        on the mechanics level. However, allowing code modding is ambitious and
+        would require a major refactor of the existing game code. To avoid scope
+        creep, code modding was cut for the capstone milestone and listed as a
+        low-priority task for future development.
       </Text>
     </ProjectDisplay>
   )
