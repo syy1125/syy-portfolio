@@ -17,7 +17,7 @@ export const OberthEffect = () => {
       inspirations={[
         'Reassembly (video game)',
         'From The Depths (video game)',
-        'Robocraft (video game)',
+        'The Expanse (book/tv series)',
       ]}
     >
       <Text variant="body2" align="justify">
