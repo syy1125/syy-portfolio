@@ -96,8 +96,8 @@ export const Home = () => {
           <Paper>
             <TitleText variant="h4">About Me</TitleText>
             <SectionBody>
-              Hello! I'm Jack. I'm currently a 5th year UCI student looking to
-              enter the games industry.
+              Hello! I'm Jack. I'm recent UCI graduate looking to enter the
+              games industry.
             </SectionBody>
             <SectionBody>
               As a member of the Video Game Development Club at UCI, I have
