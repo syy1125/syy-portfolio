@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useEffect, useMemo } from 'react'
 import HomeIcon from '@mui/icons-material/Home'
 import VideogameAssetIcon from '@mui/icons-material/VideogameAsset'
 import InfoIcon from '@mui/icons-material/Info'
@@ -8,8 +8,18 @@ import { Home } from './containers/Home'
 import { About } from './containers/About'
 import { GameDev } from './containers/GameDev'
 import { SmallAlert } from './containers/SmallAlert'
+import { useHistory } from 'react-router-dom'
 
 export const Main = () => {
+  const history = useHistory()
+  useEffect(() => {
+    const redirect = sessionStorage.getItem('redirect')
+    if (redirect != null) {
+      sessionStorage.removeItem('redirect')
+      history.replace(redirect)
+    }
+  }, [history])
+
   const tabs = useMemo<TabInfo[]>(
     () => [
       {
