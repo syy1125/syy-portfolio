@@ -14,6 +14,7 @@ interface Props {
   onClose: () => void
   title: React.ReactNode
   subtitle: string
+  role?: string
   inspirations?: string[]
   children: React.ReactNode | React.ReactNode[]
 }
@@ -29,6 +30,12 @@ const Content = styled(DialogContent, { name: 'Content' })(({ theme }) => ({
   color: theme.palette.text.secondary,
 }))
 
+const ContentText = styled(DialogContentText, { name: 'ContentText' })(
+  ({ theme }) => ({
+    marginBottom: theme.spacing(1),
+  })
+)
+
 const InspirationList = styled('ul', { name: 'InspirationList' })({
   margin: 0,
 })
@@ -42,6 +49,7 @@ export const ProjectDialog = ({
   onClose,
   title,
   subtitle,
+  role,
   inspirations,
   children,
 }: Props) => {
@@ -55,9 +63,10 @@ export const ProjectDialog = ({
     >
       <DialogTitle>{title}</DialogTitle>
       <Content>
-        <DialogContentText>{subtitle}</DialogContentText>
+        <ContentText>{subtitle}</ContentText>
+        {role ? <ContentText>Role: {role}</ContentText> : null}
         {inspirations ? (
-          <DialogContentText variant="subtitle2">
+          <ContentText variant="subtitle2">
             Inspirations:{' '}
             {inspirations.length > 2 ? (
               <InspirationList>
@@ -68,7 +77,7 @@ export const ProjectDialog = ({
             ) : (
               inspirations.join(', ')
             )}
-          </DialogContentText>
+          </ContentText>
         ) : null}
         {children}
       </Content>

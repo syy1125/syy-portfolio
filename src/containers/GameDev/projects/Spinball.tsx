@@ -11,7 +11,8 @@ export const Spinball = () => {
       imageUrl="https://img.itch.zone/aW1nLzE1Nzg1MDMucG5n/315x250%23c/nEVHCM.png"
       tagline="Basically virtual beyblade"
       links={[{ title: 'itch.io', href: 'https://epkitch.itch.io/spinball' }]}
-      subtitle="Game Jam project, Fall 2018"
+      subtitle="Proto Game Jam project (48 hours), Fall 2018, Unity"
+      role="UI Programmer"
     >
       <Text variant="body2" align="justify">
         Spinball: Spiral Out Of Control (SPOOC, or Spinball) was my first game

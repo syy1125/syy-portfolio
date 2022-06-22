@@ -12,6 +12,7 @@ interface Props {
   links?: Array<{ title: string; href: string }>
   // Dialog data
   subtitle: string
+  role?: string
   inspirations?: string[]
   children: React.ReactNode | React.ReactNode[]
 }
@@ -23,6 +24,7 @@ export const ProjectDisplay = ({
   tagline,
   links,
   subtitle,
+  role,
   inspirations,
   children,
 }: Props) => {
@@ -45,6 +47,7 @@ export const ProjectDisplay = ({
             onClose={() => history.goBack()}
             title={title}
             subtitle={subtitle}
+            role={role}
             inspirations={inspirations}
           >
             {children}

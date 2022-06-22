@@ -14,7 +14,8 @@ export const ProjectStardust = () => {
           href: 'https://syy1125.itch.io/project-stardust',
         },
       ]}
-      subtitle="VGDC Project, Winter 2020"
+      subtitle="VGDC Project, Winter 2020, Unity"
+      role="Team Lead, Designer, Programmer"
       inspirations={[
         'Kerbal Space Program (video game)',
         'Stellaris (video game)',

@@ -13,7 +13,7 @@ export const OberthEffect = () => {
       links={[
         { title: 'itch.io', href: 'https://syy1125.itch.io/oberth-effect' },
       ]}
-      subtitle="Capstone project"
+      subtitle="Personal capstone project, Unity"
       inspirations={[
         'Reassembly (video game)',
         'From The Depths (video game)',
@@ -21,9 +21,8 @@ export const OberthEffect = () => {
       ]}
     >
       <Text variant="body2" align="justify">
-        Oberth Effect is one of my most ambitious projects so far. It is
-        designed to be a vehicle design and combat game, with some built-in
-        modding support.
+        Oberth Effect my most ambitious projects so far. It is designed to be a
+        vehicle design and combat game, with some built-in modding support.
       </Text>
       <br />
       <Text>Concept and Design</Text>

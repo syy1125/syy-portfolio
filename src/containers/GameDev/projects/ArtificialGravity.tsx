@@ -16,7 +16,8 @@ export const ArtificialGravity = () => {
           href: 'https://syy1125.itch.io/artificial-gravity',
         },
       ]}
-      subtitle="VGDC Project, Fall 2019"
+      subtitle="VGDC Project, Fall 2019, Unity"
+      role="Team Lead, Systems Designer, Programmer"
       inspirations={[
         'Stormlight Archive (book series)',
         'Terraria (video game)',

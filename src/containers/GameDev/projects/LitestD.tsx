@@ -11,7 +11,8 @@ export const LitestD = () => {
       imageUrl="https://img.itch.zone/aW1nLzE5NzE5MzAuanBn/315x250%23c/akOpR0.jpg"
       tagline="Resource management meets tower defense"
       links={[{ title: 'itch.io', href: 'https://syy1125.itch.io/litestd' }]}
-      subtitle="VGDC Project, Winter 2019"
+      subtitle="VGDC Project, Winter 2019, Unity"
+      role="Team Lead, Designer, Programmer"
       inspirations={['Into The Breach (video game)']}
     >
       <Text variant="body2" align="justify">

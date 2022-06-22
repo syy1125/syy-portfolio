@@ -11,7 +11,8 @@ export const Streamline = () => {
       imageUrl="https://img.itch.zone/aW1nLzE4NDM3NTcucG5n/315x250%23c/gtGIK6.png"
       tagline="Circuit design puzzle"
       links={[{ title: 'itch.io', href: 'https://syy1125.itch.io/streamline' }]}
-      subtitle="VGDC Project, Fall 2018"
+      subtitle="VGDC Project, Fall 2018, Unity"
+      role="Team Lead, Designer, Programmer"
       inspirations={[
         'SpaceChem (video game)',
         'Psi (Minecraft mod)',
